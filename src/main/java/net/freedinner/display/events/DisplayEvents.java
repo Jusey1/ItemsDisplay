@@ -1,17 +1,21 @@
 package net.freedinner.display.events;
 
-import net.freedinner.display.util.BlockAssociations;
+import net.freedinner.display.init.DisplayBlocks;
 import net.freedinner.display.init.DisplayTags;
+import net.freedinner.display.util.BlockAssociations;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.neoforge.event.level.LevelEvent;
+import net.neoforged.neoforge.event.TagsUpdatedEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.item.ItemStack;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.core.HolderSet;
+import net.minecraft.core.Holder;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.core.BlockPos;
-import java.util.List;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.Item;
+import java.util.Optional;
 
 @EventBusSubscriber
 public class DisplayEvents {
@@ -23,13 +27,22 @@ public class DisplayEvents {
 	}
 
 	@SubscribeEvent
-	public static void onWorldLoad(LevelEvent.Load event) {
-		if (event.getLevel() instanceof ServerLevel lvl) {
-			Block[] array = DisplayManager.getBlocks();
-			for (Block target : array) {
-				List<ItemStack> drops = target.getDrops(target.defaultBlockState(), lvl, BlockPos.containing(0, 256, 0), null);
-				if (!drops.isEmpty() && drops.get(0).is(DisplayTags.DISPLAYABLE)) {
-					BlockAssociations.addToMap(drops.get(0).getItem(), target);
+	public static void onItemCheck(PlayerInteractEvent.RightClickItem event) {
+		if (event.getEntity().isCrouching() && event.getItemStack().is(DisplayTags.DISPLAYABLE)) {
+			event.setCanceled(true);
+		}
+	}
+
+	@SubscribeEvent
+	public static void onTags(TagsUpdatedEvent event) {
+		Optional<HolderSet.Named<Item>> items = event.getLookupProvider().lookupOrThrow(Registries.ITEM).get(DisplayTags.DISPLAYABLE);
+		if (items.isPresent()) {
+			for (Holder<Item> target : items.get()) {
+				for (DeferredHolder<Block, ? extends Block> block : DisplayBlocks.REGISTRY.getEntries()) {
+					if (target.getRegisteredName().contains(block.getId().getPath()) && BlockAssociations.getItemFor(block.get()) == Items.AIR) {
+						BlockAssociations.addToMap(target.value(), block.get());
+						break;
+					}
 				}
 			}
 		}

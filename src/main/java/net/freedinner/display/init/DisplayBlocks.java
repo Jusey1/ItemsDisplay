@@ -46,8 +46,7 @@ public class DisplayBlocks {
 	public static final DeferredHolder<Block, Block> SPADE_POTTERY_SHERD = REGISTRY.register("spade_pottery_sherd", () -> new SherdBlock(createBlock("spade_pottery_sherd", SoundType.DECORATED_POT)));
 	
 	public static final DeferredHolder<Block, Block> NETHERITE_UPGRADE = REGISTRY.register("netherite_upgrade", () -> new UpgradeBlock(createBlock("netherite_upgrade", SoundType.NETHERRACK)));
-	public static final DeferredHolder<Block, Block> GOTHIC_UPGRADE = REGISTRY.register("gothic_upgrade", () -> new UpgradeBlock(createBlock("gothic_upgrade", SoundType.SOUL_SOIL)));
-	public static final DeferredHolder<Block, Block> PRESERVED_UPGRADE = REGISTRY.register("preserved_upgrade", () -> new UpgradeBlock(createBlock("preserved_upgrade", SoundType.STONE)));
+	public static final DeferredHolder<Block, Block> PRESERVED_UPGRADE = REGISTRY.register("preserved_template", () -> new UpgradeBlock(createBlock("preserved_template", SoundType.STONE)));
 	public static final DeferredHolder<Block, Block> SILVER_UPGRADE = REGISTRY.register("silver_upgrade", () -> new UpgradeBlock(createBlock("silver_upgrade", SoundType.WOOD)));
 
 	public static final DeferredHolder<Block, Block> BOLT_ARMOR_TRIM = REGISTRY.register("bolt_armor_trim", () -> new ArmorTrimBlock(createBlock("bolt_armor_trim", SoundType.COPPER)));
@@ -68,8 +67,7 @@ public class DisplayBlocks {
 	public static final DeferredHolder<Block, Block> WARD_ARMOR_TRIM = REGISTRY.register("ward_armor_trim", () -> new ArmorTrimBlock(createBlock("ward_armor_trim", SoundType.DEEPSLATE)));
 	public static final DeferredHolder<Block, Block> WAYFINDER_ARMOR_TRIM = REGISTRY.register("wayfinder_armor_trim", () -> new ArmorTrimBlock(createBlock("wayfinder_armor_trim", SoundType.GRAVEL)));
 	public static final DeferredHolder<Block, Block> WILD_ARMOR_TRIM = REGISTRY.register("wild_armor_trim", () -> new ArmorTrimBlock(createBlock("wild_armor_trim", SoundType.STONE)));
-	public static final DeferredHolder<Block, Block> KOBOLD_ARMOR_TRIM = REGISTRY.register("kobold_armor_trim", () -> new ArmorTrimBlock(createBlock("kobold_armor_trim", SoundType.TUFF)));
-	public static final DeferredHolder<Block, Block> NECRO_ARMOR_TRIM = REGISTRY.register("necro_armor_trim", () -> new ArmorTrimBlock(createBlock("necro_armor_trim", SoundType.SOUL_SOIL)));
+	public static final DeferredHolder<Block, Block> KOBOLD_ARMOR_TRIM = REGISTRY.register("kobold_template", () -> new ArmorTrimBlock(createBlock("kobold_template", SoundType.TUFF)));
 	public static final DeferredHolder<Block, Block> POLAR_ARMOR_TRIM = REGISTRY.register("polarity_armor_trim", () -> new ArmorTrimBlock(createBlock("polarity_armor_trim", SoundType.STONE)));
 
 	public static final DeferredHolder<Block, Block> BRICK = REGISTRY.register("brick", () -> new IngotBlock(createBlock("brick", SoundType.DECORATED_POT)));
@@ -79,8 +77,8 @@ public class DisplayBlocks {
 	public static final DeferredHolder<Block, Block> COPPER_INGOT = REGISTRY.register("copper_ingot", () -> new IngotBlock(createBlock("copper_ingot", SoundType.COPPER)));
 	public static final DeferredHolder<Block, Block> GOLD_INGOT = REGISTRY.register("gold_ingot", () -> new IngotBlock(createBlock("gold_ingot", SoundType.METAL)));
 	public static final DeferredHolder<Block, Block> NETHERITE_INGOT = REGISTRY.register("netherite_ingot", () -> new IngotBlock(createBlock("netherite_ingot", SoundType.NETHERITE_BLOCK)));
-	public static final DeferredHolder<Block, Block> AZURE_INGOT = REGISTRY.register("azure_ingot", () -> new IngotBlock(createBlock("azure_ingot", SoundType.METAL)));
-	public static final DeferredHolder<Block, Block> SCARLET_INGOT = REGISTRY.register("scarlet_ingot", () -> new IngotBlock(createBlock("scarlet_ingot", SoundType.METAL)));
+	public static final DeferredHolder<Block, Block> AZURE_INGOT = REGISTRY.register("azure_neodymium_ingot", () -> new IngotBlock(createBlock("azure_neodymium_ingot", SoundType.METAL)));
+	public static final DeferredHolder<Block, Block> SCARLET_INGOT = REGISTRY.register("scarlet_neodymium_ingot", () -> new IngotBlock(createBlock("scarlet_neodymium_ingot", SoundType.METAL)));
 	public static final DeferredHolder<Block, Block> BRASS_INGOT = REGISTRY.register("brass_ingot", () -> new IngotBlock(createBlock("brass_ingot", SoundType.METAL)));
 	public static final DeferredHolder<Block, Block> ZINC_INGOT = REGISTRY.register("zinc_ingot", () -> new IngotBlock(createBlock("zinc_ingot", SoundType.METAL)));
 	public static final DeferredHolder<Block, Block> SILVER_INGOT = REGISTRY.register("silver_ingot", () -> new IngotBlock(createBlock("silver_ingot", SoundType.METAL)));

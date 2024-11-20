@@ -51,6 +51,14 @@ public abstract class AbstractItemBlock extends HorizontalDirectionalBlock imple
 	}
 
 	@Override
+	protected void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean check) {
+		super.onRemove(state, world, pos, newState, check);
+		if (state.getBlock() != newState.getBlock()) {
+			Block.popResource(world, pos, this.getStackFor());
+		}
+	}
+
+	@Override
 	public FluidState getFluidState(BlockState state) {
 		return state.getValue(WATERLOGGED) ? Fluids.WATER.getSource(false) : super.getFluidState(state);
 	}
