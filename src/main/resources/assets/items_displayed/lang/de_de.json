@@ -20,6 +20,24 @@
   "item.items_displayed.pink_jewelry_pillow": "Rosa Schmuckkissen",
   "item.items_displayed.brown_jewelry_pillow": "Braunes Schmuckkissen",
 
+  "entity.items_displayed.item_display": "Gegenstandsdarsteller",
+  "entity.items_displayed.white_jewelry_pillow": "Weißes Schmuckkissen",
+  "entity.items_displayed.light_gray_jewelry_pillow": "Hellgraues Schmuckkissen",
+  "entity.items_displayed.gray_jewelry_pillow": "Graues Schmuckkissen",
+  "entity.items_displayed.black_jewelry_pillow": "Schwarzes Schmuckkissen",
+  "entity.items_displayed.red_jewelry_pillow": "Rotes Schmuckkissen",
+  "entity.items_displayed.orange_jewelry_pillow": "Oranges Schmuckkissen",
+  "entity.items_displayed.yellow_jewelry_pillow": "Gelbes Schmuckkissen",
+  "entity.items_displayed.lime_jewelry_pillow": "Hellgrünes Schmuckkissen",
+  "entity.items_displayed.green_jewelry_pillow": "Grünes Schmuckkissen",
+  "entity.items_displayed.light_blue_jewelry_pillow": "Hellblaues  Schmuckkissen",
+  "entity.items_displayed.cyan_jewelry_pillow": "Türkises Schmuckkissen",
+  "entity.items_displayed.blue_jewelry_pillow": "Blaues Schmuckkissen",
+  "entity.items_displayed.purple_jewelry_pillow": "Violettes Schmuckkissen",
+  "entity.items_displayed.magenta_jewelry_pillow": "Magenta Schmuckkissen",
+  "entity.items_displayed.pink_jewelry_pillow": "Rosa Schmuckkissen",
+  "entity.items_displayed.brown_jewelry_pillow": "Braunes Schmuckkissen",
+
   "item.items_displayed.tooltip.shift_place": "Kann platziert werden, während Shift gedrückt wird",
   "item.items_displayed.tooltip.shift_more_info": "Shift für weitere Informationen drücken",
   "item.items_displayed.tooltip.can_be_used_to": "Können dargestellt werden:",
@@ -28,11 +46,5 @@
   "item.items_displayed.tooltip.item_display_2": " - Scheiben",
   "item.items_displayed.tooltip.jewelry_pillow_0": " - Edelsteine",
   "item.items_displayed.tooltip.jewelry_pillow_1": " - Kristalle",
-  "item.items_displayed.tooltip.debug": "Du solltest diesen Gegenstand eigentlich nicht haben können...",
-
-  "tag.item.items_displayed.sherds" : "Töpferscherben",
-  "tag.item.items_displayed.smithing_templates" : "Schmiedevorlagen",
-
-  "entity.items_displayed.item_display": "Gegenstandsdarsteller",
-  "entity.items_displayed.jewelry_pillow": "Schmuckkissen"
+  "item.items_displayed.tooltip.debug": "Du solltest diesen Gegenstand eigentlich nicht haben können."
 }

@@ -20,7 +20,6 @@
   "item.items_displayed.pink_jewelry_pillow": "Pink Display Pillow",
   "item.items_displayed.brown_jewelry_pillow": "Brown Display Pillow",
 
-  "entity.items_displayed.item_group_name": "Items Displayed",
   "entity.items_displayed.item_display": "Item Display",
   "entity.items_displayed.white_jewelry_pillow": "White Display Pillow",
   "entity.items_displayed.light_gray_jewelry_pillow": "Light Gray Display Pillow",
@@ -39,7 +38,7 @@
   "entity.items_displayed.pink_jewelry_pillow": "Pink Display Pillow",
   "entity.items_displayed.brown_jewelry_pillow": "Brown Display Pillow",
 
-  "item.items_displayed.tooltip.shift_place": "Can be placed while sneaking",
+  "item.items_displayed.tooltip.shift_place": "Can be placed while crouching",
   "item.items_displayed.tooltip.shift_more_info": "Press Shift for more info",
   "item.items_displayed.tooltip.can_be_used_to": "Can be used to display:",
   "item.items_displayed.tooltip.item_display_0": " - Sherds",
@@ -47,11 +46,5 @@
   "item.items_displayed.tooltip.item_display_2": " - Music Discs",
   "item.items_displayed.tooltip.jewelry_pillow_0": " - Gemstones",
   "item.items_displayed.tooltip.jewelry_pillow_1": " - Crystals",
-  "item.items_displayed.tooltip.debug": "You shouldn't be able to have this item...",
-
-  "tag.item.items_displayed.sherds" : "Sherds",
-  "tag.item.items_displayed.smithing_templates" : "Smithing templates",
-
-  "entity.items_displayed.item_display": "Item Display",
-  "entity.items_displayed.jewelry_pillow": "Display Pillow"
+  "item.items_displayed.tooltip.debug": "You shouldn't be able to have this item."
 }

@@ -20,6 +20,24 @@
   "item.items_displayed.pink_jewelry_pillow": "Almofada de Joias Rosa",
   "item.items_displayed.brown_jewelry_pillow": "Almofada de Joias Marrom",
 
+  "entity.items_displayed.item_display": "Mostrador de itens",
+  "entity.items_displayed.white_jewelry_pillow": "Almofada de Joias Branca",
+  "entity.items_displayed.light_gray_jewelry_pillow": "Almofada de Joias Cinza Clara",
+  "entity.items_displayed.gray_jewelry_pillow": "Almofada de Joias Cinza",
+  "entity.items_displayed.black_jewelry_pillow": "Almofada de Joias Preta",
+  "entity.items_displayed.red_jewelry_pillow": "Almofada de Joias Vermelha",
+  "entity.items_displayed.orange_jewelry_pillow": "Almofada de Joias Laranja",
+  "entity.items_displayed.yellow_jewelry_pillow": "Almofada de Joias Amarela",
+  "entity.items_displayed.lime_jewelry_pillow": "Almofada de Joias Verde-limão",
+  "entity.items_displayed.green_jewelry_pillow": "Almofada de Joias Verde",
+  "entity.items_displayed.light_blue_jewelry_pillow": "Almofada de Joias Azul Claro",
+  "entity.items_displayed.cyan_jewelry_pillow": "Almofada de Joias Ciano",
+  "entity.items_displayed.blue_jewelry_pillow": "Almofada de Joias Azul",
+  "entity.items_displayed.purple_jewelry_pillow": "Almofada de Joias Roxa",
+  "entity.items_displayed.magenta_jewelry_pillow": "Almofada de Joias Magenta",
+  "entity.items_displayed.pink_jewelry_pillow": "Almofada de Joias Rosa",
+  "entity.items_displayed.brown_jewelry_pillow": "Almofada de Joias Marrom",
+
   "item.items_displayed.tooltip.shift_place": "Pode ser colocado enquanto agachado",
   "item.items_displayed.tooltip.shift_more_info": "Pressione o botão de Agachar para mais informações",
   "item.items_displayed.tooltip.can_be_used_to": "Pode ser usado para exibir:",
@@ -28,11 +46,5 @@
   "item.items_displayed.tooltip.item_display_2": " - Discos",
   "item.items_displayed.tooltip.jewelry_pillow_0": " - Gemas",
   "item.items_displayed.tooltip.jewelry_pillow_1": " - Cristais",
-  "item.items_displayed.tooltip.debug": "Você não deveria ter esse item...",
-
-  "tag.item.items_displayed.sherds" : "Óstracos",
-  "tag.item.items_displayed.smithing_templates" : "Moldes de ferraria",
-
-  "entity.items_displayed.item_display": "Mostrador de itens",
-  "entity.items_displayed.jewelry_pillow": "Almofada de Joias"
+  "item.items_displayed.tooltip.debug": "Você não deveria ter esse item."
 }
