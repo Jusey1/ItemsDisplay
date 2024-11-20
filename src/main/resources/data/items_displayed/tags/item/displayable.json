@@ -177,14 +177,6 @@
       "required": false
     },
     {
-      "id": "supernatural:necro_template",
-      "required": false
-    },
-    {
-      "id": "supernatural:gothic_template",
-      "required": false
-    },
-    {
       "id": "supplementaries:ash_brick",
       "required": false
     }
