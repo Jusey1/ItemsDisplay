@@ -15,6 +15,7 @@ public class Display {
 		DisplayBlocks.REGISTRY.register(bus);
 		DisplayItems.REGISTRY.register(bus);
 		DisplayTabs.REGISTRY.register(bus);
+		DisplayBlocks.setupBlocks();
 		DisplayItems.setupBlockItems();
 		mod.registerConfig(ModConfig.Type.COMMON, DisplayConfig.CONFIG, "items-displayed-common.toml");
 	}
