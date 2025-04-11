@@ -4,18 +4,18 @@ import net.freedinner.display.Display;
 import net.freedinner.display.init.DisplayModels;
 import net.freedinner.display.entity.ItemDisplay;
 import net.freedinner.display.client.model.ItemDisplayModel;
-import net.minecraft.world.item.ItemDisplayContext;
-import net.minecraft.util.Mth;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import com.mojang.math.Axis;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
+import net.minecraft.world.item.ItemDisplayContext;
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.math.Axis;
 
 public class ItemDisplayRenderer extends LivingEntityRenderer<ItemDisplay, AbstractDisplayState, ItemDisplayModel<AbstractDisplayState>> {
 	public ItemDisplayRenderer(EntityRendererProvider.Context context) {
 		super(context, new ItemDisplayModel(context.bakeLayer(DisplayModels.DISPLAY)), 0.0f);
-		this.addLayer(new DisplayedItemLayer(this, context.getItemRenderer()));
+		this.addLayer(new DisplayedItemLayer(this));
 	}
 
 	@Override
@@ -30,8 +30,8 @@ public class ItemDisplayRenderer extends LivingEntityRenderer<ItemDisplay, Abstr
 
 	@Override
 	public void extractRenderState(ItemDisplay display, AbstractDisplayState state, float f1) {
+		this.itemModelResolver.updateForLiving(state.heldItem, display.getOffhandItem(), ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, display);
 		state.yRot = Mth.rotLerp(f1, display.yRotO, display.getYRot());
-		state.itemModel = this.itemRenderer.resolveItemModel(display.getOffhandItem(), display, ItemDisplayContext.THIRD_PERSON_RIGHT_HAND);
 		state.lastHit = (float) (display.level().getGameTime() - display.lastHit) + f1;
 		state.stack = display.getOffhandItem();
 	}

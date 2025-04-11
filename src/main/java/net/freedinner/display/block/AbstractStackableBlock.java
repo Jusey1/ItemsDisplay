@@ -1,17 +1,18 @@
 package net.freedinner.display.block;
 
-import net.freedinner.display.init.DisplayProperties;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.core.Direction;
+import net.minecraft.world.level.material.FluidState;
 
 public abstract class AbstractStackableBlock extends AbstractItemBlock {
-	public static final IntegerProperty STACKS = DisplayProperties.STACKS;
+	public static final IntegerProperty STACKS = IntegerProperty.create("stacks", 1, 10);
 
 	public AbstractStackableBlock(BlockBehaviour.Properties props) {
 		super(props);
@@ -19,9 +20,19 @@ public abstract class AbstractStackableBlock extends AbstractItemBlock {
 	}
 
 	@Override
-	protected void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean check) {
-		super.onRemove(state, world, pos, newState, check);
-		if (state.getBlock() != newState.getBlock() && getStacks(state) > 1) {
+	public boolean onDestroyedByPlayer(BlockState state, Level world, BlockPos pos, Player player, boolean check, FluidState fluid) {
+		if (getStacks(state) > 1) {
+			for (int i = 1; i < getStacks(state); i++) {
+				Block.popResource(world, pos, this.getStackFor());
+			}
+		}
+		return super.onDestroyedByPlayer(state, world, pos, player, check, fluid);
+	}
+
+	@Override
+	public void onDestroyedByPushReaction(BlockState state, Level world, BlockPos pos, Direction dir, FluidState fluid) {
+		super.onDestroyedByPushReaction(state, world, pos, dir, fluid);
+		if (getStacks(state) > 1) {
 			for (int i = 1; i < getStacks(state); i++) {
 				Block.popResource(world, pos, this.getStackFor());
 			}

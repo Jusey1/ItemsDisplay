@@ -35,46 +35,10 @@ import net.minecraft.core.NonNullList;
 import net.minecraft.core.BlockPos;
 
 public class AbstractDisplayEntity extends LivingEntity {
-	private final NonNullList<ItemStack> handItems = NonNullList.withSize(2, ItemStack.EMPTY);
-	private final NonNullList<ItemStack> armorItems = NonNullList.withSize(4, ItemStack.EMPTY);
 	public long lastHit;
 
 	public AbstractDisplayEntity(EntityType<? extends LivingEntity> type, Level world) {
 		super(type, world);
-	}
-
-	@Override
-	public void addAdditionalSaveData(CompoundTag tag) {
-		super.addAdditionalSaveData(tag);
-		ListTag armor = new ListTag();
-		for (ItemStack stack : this.armorItems) {
-			armor.add(stack.saveOptional(this.registryAccess()));
-		}
-		tag.put("ArmorItems", armor);
-		ListTag hands = new ListTag();
-		for (ItemStack stack : this.handItems) {
-			hands.add(stack.saveOptional(this.registryAccess()));
-		}
-		tag.put("HandItems", hands);
-	}
-
-	@Override
-	public void readAdditionalSaveData(CompoundTag tag) {
-		super.readAdditionalSaveData(tag);
-		if (tag.contains("ArmorItems", 9)) {
-			ListTag armor = tag.getList("ArmorItems", 10);
-			for (int i = 0; i < this.armorItems.size(); i++) {
-				CompoundTag target = armor.getCompound(i);
-				this.armorItems.set(i, ItemStack.parseOptional(this.registryAccess(), target));
-			}
-		}
-		if (tag.contains("HandItems", 9)) {
-			ListTag hands = tag.getList("HandItems", 10);
-			for (int j = 0; j < this.handItems.size(); j++) {
-				CompoundTag target = hands.getCompound(j);
-				this.handItems.set(j, ItemStack.parseOptional(this.registryAccess(), target));
-			}
-		}
 	}
 
 	@Override
@@ -187,10 +151,9 @@ public class AbstractDisplayEntity extends LivingEntity {
 	}
 
 	@Override
-	protected float tickHeadTurn(float f1, float f2) {
+	protected void tickHeadTurn(float f1) {
 		this.yBodyRotO = this.yRotO;
 		this.yBodyRot = this.getYRot();
-		return 0.0F;
 	}
 
 	@Override
@@ -216,27 +179,6 @@ public class AbstractDisplayEntity extends LivingEntity {
 	@Override
 	public HumanoidArm getMainArm() {
 		return HumanoidArm.RIGHT;
-	}
-
-	@Override
-	public Iterable<ItemStack> getHandSlots() {
-		return this.handItems;
-	}
-
-	@Override
-	public Iterable<ItemStack> getArmorSlots() {
-		return this.armorItems;
-	}
-
-	@Override
-	public ItemStack getItemBySlot(EquipmentSlot slot) {
-		switch (slot.getType()) {case HAND:return this.handItems.get(slot.getIndex()); case HUMANOID_ARMOR:return this.armorItems.get(slot.getIndex()); default:return ItemStack.EMPTY;}
-	}
-
-	@Override
-	public void setItemSlot(EquipmentSlot slot, ItemStack stack) {
-		this.verifyEquippedItem(stack);
-		switch (slot.getType()) {case HAND:this.onEquipItem(slot, this.handItems.set(slot.getIndex(), stack), stack); break; case HUMANOID_ARMOR:this.onEquipItem(slot, this.armorItems.set(slot.getIndex(), stack), stack);}
 	}
 
 	public boolean isCorrectBlock(Block target) {

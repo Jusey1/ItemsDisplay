@@ -2,20 +2,20 @@ package net.freedinner.display.client.renderer;
 
 import net.freedinner.display.Display;
 import net.freedinner.display.init.DisplayModels;
-import net.freedinner.display.entity.ItemPillow;
 import net.freedinner.display.client.model.PillowModel;
-import net.minecraft.world.item.ItemDisplayContext;
-import net.minecraft.util.Mth;
-import net.minecraft.resources.ResourceLocation;
+import net.freedinner.display.entity.ItemPillow;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import com.mojang.math.Axis;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.Mth;
+import net.minecraft.world.item.ItemDisplayContext;
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.math.Axis;
 
 public class PillowRenderer extends LivingEntityRenderer<ItemPillow, AbstractDisplayState, PillowModel<AbstractDisplayState>> {
 	public PillowRenderer(EntityRendererProvider.Context context) {
 		super(context, new PillowModel(context.bakeLayer(DisplayModels.PILLOW)), 0.0f);
-		this.addLayer(new PillowedItemLayer(this, context.getItemRenderer()));
+		this.addLayer(new PillowedItemLayer(this));
 	}
 
 	@Override
@@ -30,8 +30,8 @@ public class PillowRenderer extends LivingEntityRenderer<ItemPillow, AbstractDis
 
 	@Override
 	public void extractRenderState(ItemPillow display, AbstractDisplayState state, float f1) {
+		this.itemModelResolver.updateForLiving(state.heldItem, display.getOffhandItem(), ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, display);
 		state.yRot = Mth.rotLerp(f1, display.yRotO, display.getYRot());
-		state.itemModel = this.itemRenderer.resolveItemModel(display.getOffhandItem(), display, ItemDisplayContext.THIRD_PERSON_RIGHT_HAND);
 		state.lastHit = (float) (display.level().getGameTime() - display.lastHit) + f1;
 		state.stack = display.getOffhandItem();
 		state.getType = display.getColor();

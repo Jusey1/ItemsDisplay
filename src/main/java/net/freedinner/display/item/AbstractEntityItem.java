@@ -44,7 +44,7 @@ public abstract class AbstractEntityItem extends Item {
 					}
 					float r = ((float) DisplayConfig.ROTATION.get());
 					float rot = (float) Mth.floor((Mth.wrapDegrees(context.getRotation() - 180.0F) + 22.5F) / r) * r;
-					target.moveTo(target.getX(), target.getY(), target.getZ(), rot, 0.0F);
+					target.snapTo(target.getX(), target.getY(), target.getZ(), rot, 0.0F);
 					lvl.addFreshEntityWithPassengers(target);
 					world.playSound(null, target.getX(), target.getY(), target.getZ(), SoundEvents.ARMOR_STAND_PLACE, SoundSource.BLOCKS, 0.75F, 0.8F);
 					target.gameEvent(GameEvent.ENTITY_PLACE, context.getPlayer());

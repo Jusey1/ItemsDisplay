@@ -1,8 +1,10 @@
 package net.freedinner.display.block;
 
 import net.freedinner.display.util.BlockAssociations;
+import net.minecraft.core.Direction;
+import net.minecraft.core.BlockPos;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.ScheduledTickAccess;
-import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.redstone.Orientation;
@@ -19,9 +21,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.util.RandomSource;
-import net.minecraft.core.Direction;
-import net.minecraft.core.BlockPos;
 
 public abstract class AbstractItemBlock extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock {
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
@@ -37,7 +36,7 @@ public abstract class AbstractItemBlock extends HorizontalDirectionalBlock imple
 	}
 
 	@Override
-	public ItemStack getCloneItemStack(BlockState state, HitResult target, LevelReader world, BlockPos pos, Player player) {
+	public ItemStack getCloneItemStack(LevelReader world, BlockPos pos, BlockState state, boolean check, Player player) {
 		return this.getStackFor();
 	}
 
@@ -51,11 +50,15 @@ public abstract class AbstractItemBlock extends HorizontalDirectionalBlock imple
 	}
 
 	@Override
-	protected void onRemove(BlockState state, Level world, BlockPos pos, BlockState newState, boolean check) {
-		super.onRemove(state, world, pos, newState, check);
-		if (state.getBlock() != newState.getBlock()) {
-			Block.popResource(world, pos, this.getStackFor());
-		}
+	public boolean onDestroyedByPlayer(BlockState state, Level world, BlockPos pos, Player player, boolean check, FluidState fluid) {
+		Block.popResource(world, pos, this.getStackFor());
+		return super.onDestroyedByPlayer(state, world, pos, player, check, fluid);
+	}
+
+	@Override
+	public void onDestroyedByPushReaction(BlockState state, Level world, BlockPos pos, Direction dir, FluidState fluid) {
+		super.onDestroyedByPushReaction(state, world, pos, dir, fluid);
+		Block.popResource(world, pos, this.getStackFor());
 	}
 
 	@Override
