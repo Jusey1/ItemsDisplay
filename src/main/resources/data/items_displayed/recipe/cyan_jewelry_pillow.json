@@ -5,7 +5,7 @@
   "key": {
     "S": "minecraft:stick",
     "G": "minecraft:gold_nugget",
-    "S": "minecraft:cyan_wool"
+    "W": "minecraft:cyan_wool"
   },
   "pattern": [
     " G ",
