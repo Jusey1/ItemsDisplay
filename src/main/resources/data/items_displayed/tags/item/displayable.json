@@ -137,6 +137,10 @@
       "required": false
     },
     {
+      "id": "friendsandfoes:music_disc_around_the_corner",
+      "required": false
+    },
+    {
       "id": "galosphere:silver_ingot",
       "required": false
     },
