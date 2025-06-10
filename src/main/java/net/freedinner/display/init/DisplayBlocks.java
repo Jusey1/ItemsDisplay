@@ -124,6 +124,9 @@ public class DisplayBlocks {
 		if (ModList.get().isLoaded("ecologics")) {
 			REGISTRY.register("music_disc_coconut", () -> new MusicBlock(createBlock("music_disc_coconut", SoundType.STONE)));
 		}
+		if (ModList.get().isLoaded("friendsandfoes")) {
+			REGISTRY.register("music_disc_around_the_corner", () -> new MusicBlock(createBlock("music_disc_around_the_corner", SoundType.STONE)));
+		}
 		if (ModList.get().isLoaded("galosphere")) {
 			REGISTRY.register("preserved_template", () -> new UpgradeBlock(createBlock("preserved_template", SoundType.STONE)));
 			REGISTRY.register("silver_upgrade", () -> new UpgradeBlock(createBlock("silver_upgrade", SoundType.WOOD)));
