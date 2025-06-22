@@ -63,6 +63,7 @@ public class DisplayBlocks {
 		//
 		REGISTRY.register("brick", () -> new IngotBlock(createBlock("brick", SoundType.DECORATED_POT)));
 		REGISTRY.register("nether_brick", () -> new IngotBlock(createBlock("nether_brick", SoundType.NETHER_BRICKS)));
+		REGISTRY.register("resin_brick", () -> new IngotBlock(createBlock("resin_brick", SoundType.RESIN_BRICKS)));
 		REGISTRY.register("iron_ingot", () -> new IngotBlock(createBlock("iron_ingot", SoundType.METAL)));
 		REGISTRY.register("copper_ingot", () -> new IngotBlock(createBlock("copper_ingot", SoundType.COPPER)));
 		REGISTRY.register("gold_ingot", () -> new IngotBlock(createBlock("gold_ingot", SoundType.METAL)));
@@ -145,6 +146,10 @@ public class DisplayBlocks {
 		}
 		if (ModList.get().isLoaded("supplementaries")) {
 			REGISTRY.register("ash_brick", () -> new IngotBlock(createBlock("ash_brick", SoundType.DECORATED_POT)));
+			REGISTRY.register("music_disc_heave_ho", () -> new MusicBlock(createBlock("music_disc_heave_ho", SoundType.STONE)));
+		}
+		if (ModList.get().isLoaded("vanillabackport")) {
+			REGISTRY.register("music_disc_tears", () -> new MusicBlock(createBlock("music_disc_tears", SoundType.STONE)));
 		}
 	}
 

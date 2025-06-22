@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.FluidState;
+import net.minecraft.world.level.redstone.Orientation;
 
 public abstract class AbstractStackableBlock extends AbstractItemBlock {
 	public static final IntegerProperty STACKS = IntegerProperty.create("stacks", 1, 10);
@@ -17,6 +18,18 @@ public abstract class AbstractStackableBlock extends AbstractItemBlock {
 	public AbstractStackableBlock(BlockBehaviour.Properties props) {
 		super(props);
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, false).setValue(STACKS, 1));
+	}
+
+	@Override
+	public void neighborChanged(BlockState state, Level world, BlockPos pos, Block blok, Orientation ori, boolean bool) {
+		if (!world.isClientSide() && !canSurvive(state, world, pos)) {
+			if (getStacks(state) > 1) {
+				for (int i = 1; i < getStacks(state); i++) {
+					Block.popResource(world, pos, this.getStackFor());
+				}
+			}
+		}
+		super.neighborChanged(state, world, pos, blok, ori, bool);
 	}
 
 	@Override
@@ -31,12 +44,12 @@ public abstract class AbstractStackableBlock extends AbstractItemBlock {
 
 	@Override
 	public void onDestroyedByPushReaction(BlockState state, Level world, BlockPos pos, Direction dir, FluidState fluid) {
-		super.onDestroyedByPushReaction(state, world, pos, dir, fluid);
 		if (getStacks(state) > 1) {
 			for (int i = 1; i < getStacks(state); i++) {
 				Block.popResource(world, pos, this.getStackFor());
 			}
 		}
+		super.onDestroyedByPushReaction(state, world, pos, dir, fluid);
 	}
 
 	@Override

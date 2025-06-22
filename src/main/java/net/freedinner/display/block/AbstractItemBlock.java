@@ -44,7 +44,7 @@ public abstract class AbstractItemBlock extends HorizontalDirectionalBlock imple
 	public void neighborChanged(BlockState state, Level world, BlockPos pos, Block blok, Orientation ori, boolean bool) {
 		super.neighborChanged(state, world, pos, blok, ori, bool);
 		if (!world.isClientSide() && !canSurvive(state, world, pos)) {
-			Block.dropResources(state, world, pos, null);
+			Block.popResource(world, pos, this.getStackFor());
 			world.removeBlock(pos, true);
 		}
 	}
