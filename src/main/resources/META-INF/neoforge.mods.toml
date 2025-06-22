@@ -4,7 +4,7 @@ license="MIT License"
 
 [[mods]]
 modId="items_displayed"
-version="2.2.2"
+version="2.2.3"
 displayName="Items Displayed"
 displayURL="https://legacy.curseforge.com/minecraft/mc-mods/items-displayed"
 logoFile="logo.png"
@@ -72,6 +72,12 @@ config="display.mixins.json"
     side="BOTH"
 [[dependencies.items_displayed]]
     modId="supplementaries"
+    type="optional"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+[[dependencies.items_displayed]]
+    modId="vanillabackport"
     type="optional"
     versionRange="[0,)"
     ordering="AFTER"

@@ -7,6 +7,7 @@
     "minecraft:netherite_ingot",
     "minecraft:brick",
     "minecraft:nether_brick",
+    "minecraft:resin_brick",
     "minecraft:coal",
     "minecraft:charcoal",
     "minecraft:amethyst_shard",
@@ -34,6 +35,10 @@
     "minecraft:music_disc_otherside",
     "minecraft:music_disc_5",
     "minecraft:music_disc_relic",
+    {
+      "id": "minecraft:music_disc_tears",
+      "required": false
+    },
     "minecraft:angler_pottery_sherd",
     "minecraft:archer_pottery_sherd",
     "minecraft:arms_up_pottery_sherd",
@@ -182,6 +187,14 @@
     },
     {
       "id": "supplementaries:ash_brick",
+      "required": false
+    },
+    {
+      "id": "supplementaries:music_disc_heave_ho",
+      "required": false
+    },
+    {
+      "id": "vanillabackport:music_disc_tears",
       "required": false
     }
   ]
