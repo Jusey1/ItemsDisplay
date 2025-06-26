@@ -39,6 +39,10 @@
       "id": "minecraft:music_disc_tears",
       "required": false
     },
+    {
+      "id": "minecraft:music_disc_lava_chicken",
+      "required": false
+    },
     "minecraft:angler_pottery_sherd",
     "minecraft:archer_pottery_sherd",
     "minecraft:arms_up_pottery_sherd",
@@ -195,6 +199,10 @@
     },
     {
       "id": "vanillabackport:music_disc_tears",
+      "required": false
+    },
+    {
+      "id": "vanillabackport:music_disc_lava_chicken",
       "required": false
     }
   ]
