@@ -15,7 +15,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 
 
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber
 public class DisplayMobs {
 	public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(Registries.ENTITY_TYPE, Display.MODID);
 	public static final DeferredHolder<EntityType<?>, EntityType<ItemDisplay>> DISPLAY = register("item_display", EntityType.Builder.<ItemDisplay>of(ItemDisplay::new, MobCategory.MISC).sized(0.45F, 0.75F).clientTrackingRange(10));

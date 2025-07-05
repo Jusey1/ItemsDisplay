@@ -87,6 +87,7 @@ public class DisplayBlocks {
 		REGISTRY.register("music_disc_creator", () -> new MusicBlock(createBlock("music_disc_creator", SoundType.COPPER)));
 		REGISTRY.register("music_disc_creator_music_box", () -> new MusicBlock(createBlock("music_disc_creator_music_box", SoundType.COPPER)));
 		REGISTRY.register("music_disc_far", () -> new MusicBlock(createBlock("music_disc_far", SoundType.STONE)));
+		REGISTRY.register("music_disc_lava_chicken", () -> new MusicBlock(createBlock("music_disc_lava_chicken", SoundType.STONE)));
 		REGISTRY.register("music_disc_mall", () -> new MusicBlock(createBlock("music_disc_mall", SoundType.STONE)));
 		REGISTRY.register("music_disc_mellohi", () -> new MusicBlock(createBlock("music_disc_mellohi", SoundType.STONE)));
 		REGISTRY.register("music_disc_otherside", () -> new MusicBlock(createBlock("music_disc_otherside", SoundType.STONE)));
@@ -95,6 +96,7 @@ public class DisplayBlocks {
 		REGISTRY.register("music_disc_relic", () -> new MusicBlock(createBlock("music_disc_relic", SoundType.STONE)));
 		REGISTRY.register("music_disc_stal", () -> new MusicBlock(createBlock("music_disc_stal", SoundType.STONE)));
 		REGISTRY.register("music_disc_strad", () -> new MusicBlock(createBlock("music_disc_strad", SoundType.STONE)));
+		REGISTRY.register("music_disc_tears", () -> new MusicBlock(createBlock("music_disc_tears", SoundType.STONE)));
 		REGISTRY.register("music_disc_wait", () -> new MusicBlock(createBlock("music_disc_wait", SoundType.STONE)));
 		REGISTRY.register("music_disc_ward", () -> new MusicBlock(createBlock("music_disc_ward", SoundType.STONE)));
 		//
@@ -147,9 +149,6 @@ public class DisplayBlocks {
 		if (ModList.get().isLoaded("supplementaries")) {
 			REGISTRY.register("ash_brick", () -> new IngotBlock(createBlock("ash_brick", SoundType.DECORATED_POT)));
 			REGISTRY.register("music_disc_heave_ho", () -> new MusicBlock(createBlock("music_disc_heave_ho", SoundType.STONE)));
-		}
-		if (ModList.get().isLoaded("vanillabackport")) {
-			REGISTRY.register("music_disc_tears", () -> new MusicBlock(createBlock("music_disc_tears", SoundType.STONE)));
 		}
 	}
 
