@@ -35,14 +35,8 @@
     "minecraft:music_disc_otherside",
     "minecraft:music_disc_5",
     "minecraft:music_disc_relic",
-    {
-      "id": "minecraft:music_disc_tears",
-      "required": false
-    },
-    {
-      "id": "minecraft:music_disc_lava_chicken",
-      "required": false
-    },
+    "minecraft:music_disc_tears",
+    "minecraft:music_disc_lava_chicken",
     "minecraft:angler_pottery_sherd",
     "minecraft:archer_pottery_sherd",
     "minecraft:arms_up_pottery_sherd",
@@ -178,6 +172,10 @@
       "required": false
     },
     {
+      "id": "revotedwildfire:fireproof_upgrade_smithing_template",
+      "required": false
+    },
+    {
       "id": "spawn:crown_pottery_sherd",
       "required": false
     },
@@ -198,11 +196,11 @@
       "required": false
     },
     {
-      "id": "vanillabackport:music_disc_tears",
+      "id": "upgrade_aquatic:disc_fragment_atlantis",
       "required": false
     },
     {
-      "id": "vanillabackport:music_disc_lava_chicken",
+      "id": "upgrade_aquatic:music_disc_atlantis",
       "required": false
     }
   ]
