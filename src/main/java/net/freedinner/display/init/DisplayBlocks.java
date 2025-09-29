@@ -141,6 +141,9 @@ public class DisplayBlocks {
 			REGISTRY.register("kobold_template", () -> new ArmorTrimBlock(createBlock("kobold_template", SoundType.TUFF)));
 			REGISTRY.register("music_disc_kobblestone", () -> new MusicBlock(createBlock("music_disc_kobblestone", SoundType.STONE)));
 		}
+		if (ModList.get().isLoaded("revotedwildfire")) {
+			REGISTRY.register("fireproof_upgrade", () -> new UpgradeBlock(createBlock("fireproof_upgrade", SoundType.NETHER_BRICKS)));
+		}
 		if (ModList.get().isLoaded("spawn")) {
 			REGISTRY.register("crown_pottery_sherd", () -> new SherdBlock(createBlock("crown_pottery_sherd", SoundType.DECORATED_POT)));
 			REGISTRY.register("spade_pottery_sherd", () -> new SherdBlock(createBlock("spade_pottery_sherd", SoundType.DECORATED_POT)));
@@ -149,6 +152,10 @@ public class DisplayBlocks {
 		if (ModList.get().isLoaded("supplementaries")) {
 			REGISTRY.register("ash_brick", () -> new IngotBlock(createBlock("ash_brick", SoundType.DECORATED_POT)));
 			REGISTRY.register("music_disc_heave_ho", () -> new MusicBlock(createBlock("music_disc_heave_ho", SoundType.STONE)));
+		}
+		if (ModList.get().isLoaded("upgrade_aquatic")) {
+			REGISTRY.register("disc_fragment_atlantis", () -> new FragmentsBlock(createBlock("disc_fragment_atlantis", SoundType.STONE)));
+			REGISTRY.register("music_disc_atlantis", () -> new MusicBlock(createBlock("music_disc_atlantis", SoundType.STONE)));
 		}
 	}
 
