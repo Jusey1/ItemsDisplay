@@ -10,6 +10,7 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.ArmedModel;
 import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.renderer.entity.state.EntityRenderState;
 import net.minecraft.world.entity.HumanoidArm;
 import com.mojang.blaze3d.vertex.PoseStack;
 
@@ -34,14 +35,7 @@ public class PillowModel<T extends AbstractDisplayState> extends EntityModel<T> 
 	}
 
 	@Override
-	public void setupAnim(T target) {
-		super.setupAnim(target);
-		this.root.xRot = (float) (Math.PI / 180.0) * target.xRot;
-		this.root.yRot = (float) (Math.PI / 180.0) * target.yRot;
-	}
-
-	@Override
-	public void translateToHand(HumanoidArm arm, PoseStack pose) {
+	public void translateToHand(EntityRenderState target, HumanoidArm arm, PoseStack pose) {
 		this.root.translateAndRotate(pose);
 	}
 }

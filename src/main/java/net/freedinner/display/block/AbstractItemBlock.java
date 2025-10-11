@@ -50,9 +50,9 @@ public abstract class AbstractItemBlock extends HorizontalDirectionalBlock imple
 	}
 
 	@Override
-	public boolean onDestroyedByPlayer(BlockState state, Level world, BlockPos pos, Player player, boolean check, FluidState fluid) {
+	public boolean onDestroyedByPlayer(BlockState state, Level world, BlockPos pos, Player player, ItemStack stack, boolean check, FluidState fluid) {
 		Block.popResource(world, pos, this.getStackFor());
-		return super.onDestroyedByPlayer(state, world, pos, player, check, fluid);
+		return super.onDestroyedByPlayer(state, world, pos, player, stack, check, fluid);
 	}
 
 	@Override

@@ -3,6 +3,7 @@ package net.freedinner.display.block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -33,13 +34,13 @@ public abstract class AbstractStackableBlock extends AbstractItemBlock {
 	}
 
 	@Override
-	public boolean onDestroyedByPlayer(BlockState state, Level world, BlockPos pos, Player player, boolean check, FluidState fluid) {
+	public boolean onDestroyedByPlayer(BlockState state, Level world, BlockPos pos, Player player, ItemStack stack, boolean check, FluidState fluid) {
 		if (getStacks(state) > 1) {
 			for (int i = 1; i < getStacks(state); i++) {
 				Block.popResource(world, pos, this.getStackFor());
 			}
 		}
-		return super.onDestroyedByPlayer(state, world, pos, player, check, fluid);
+		return super.onDestroyedByPlayer(state, world, pos, player, stack, check, fluid);
 	}
 
 	@Override

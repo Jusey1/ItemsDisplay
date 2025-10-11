@@ -4,6 +4,7 @@ import net.freedinner.display.Display;
 import net.freedinner.display.init.DisplayModels;
 import net.freedinner.display.client.model.PillowModel;
 import net.freedinner.display.entity.ItemPillow;
+import net.minecraft.client.renderer.entity.ArmorStandRenderer;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
@@ -14,7 +15,7 @@ import com.mojang.math.Axis;
 
 public class PillowRenderer extends LivingEntityRenderer<ItemPillow, AbstractDisplayState, PillowModel<AbstractDisplayState>> {
 	public PillowRenderer(EntityRendererProvider.Context context) {
-		super(context, new PillowModel(context.bakeLayer(DisplayModels.PILLOW)), 0.0f);
+		super(context, new PillowModel(context.bakeLayer(DisplayModels.PILLOW)), 0.0F);
 		this.addLayer(new PillowedItemLayer(this));
 	}
 
@@ -30,6 +31,7 @@ public class PillowRenderer extends LivingEntityRenderer<ItemPillow, AbstractDis
 
 	@Override
 	public void extractRenderState(ItemPillow display, AbstractDisplayState state, float f1) {
+        super.extractRenderState(display, state, f1);
 		this.itemModelResolver.updateForLiving(state.heldItem, display.getOffhandItem(), ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, display);
 		state.yRot = Mth.rotLerp(f1, display.yRotO, display.getYRot());
 		state.lastHit = (float) (display.level().getGameTime() - display.lastHit) + f1;

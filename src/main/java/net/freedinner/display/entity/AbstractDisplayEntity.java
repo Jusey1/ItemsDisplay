@@ -6,17 +6,12 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.HumanoidArm;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
@@ -27,12 +22,8 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.nbt.ListTag;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.particles.BlockParticleOption;
-import net.minecraft.core.NonNullList;
-import net.minecraft.core.BlockPos;
 
 public class AbstractDisplayEntity extends LivingEntity {
 	public long lastHit;
@@ -43,9 +34,7 @@ public class AbstractDisplayEntity extends LivingEntity {
 
 	@Override
 	public InteractionResult interactAt(Player player, Vec3 v, InteractionHand hand) {
-		BlockPos pos = BlockPos.containing(this.getX(), this.getY(), this.getZ());
-		LevelAccessor world = this.level();
-		if (world instanceof ServerLevel lvl && hand == InteractionHand.MAIN_HAND) {
+		if (this.level() instanceof ServerLevel lvl && hand.equals(InteractionHand.MAIN_HAND)) {
 			ItemStack stack = player.getItemInHand(hand);
 			ItemStack current = this.getMainHandItem();
 			if (current.isEmpty()) {
@@ -55,10 +44,8 @@ public class AbstractDisplayEntity extends LivingEntity {
 					copy.setCount(1);
 					this.setItemInHand(InteractionHand.MAIN_HAND, copy);
 					this.setItemInHand(InteractionHand.OFF_HAND, new ItemStack(target.asItem()));
-					lvl.playSound(null, pos, target.defaultBlockState().getSoundType(world, pos, player).getPlaceSound(), SoundSource.BLOCKS, 1.0F, (float) (0.8F + (Math.random() * 0.2)));
-					if (!player.isCreative()) {
-						stack.shrink(1);
-					}
+					lvl.playSound(null, this.blockPosition(), target.defaultBlockState().getSoundType(this.level(), this.blockPosition(), player).getPlaceSound(), SoundSource.BLOCKS, 1.0F, (float) (0.8F + (Math.random() * 0.2)));
+                    stack.shrink(1);
 					player.swing(hand, true);
 					return InteractionResult.SUCCESS;
 				}
@@ -67,7 +54,7 @@ public class AbstractDisplayEntity extends LivingEntity {
 				player.addItem(current);
 				current.shrink(1);
 				this.getOffhandItem().shrink(1);
-				lvl.playSound(null, pos, target.defaultBlockState().getSoundType(world, pos, player).getBreakSound(), SoundSource.BLOCKS, 1.0F, (float) (0.8F + (Math.random() * 0.2)));
+				lvl.playSound(null, this.blockPosition(), target.defaultBlockState().getSoundType(this.level(), this.blockPosition(), player).getBreakSound(), SoundSource.BLOCKS, 1.0F, (float) (0.8F + (Math.random() * 0.2)));
 				player.swing(hand, true);
 				return InteractionResult.SUCCESS;
 			}
@@ -119,7 +106,7 @@ public class AbstractDisplayEntity extends LivingEntity {
 	@Override
 	public void handleEntityEvent(byte b) {
 		if (b == 32) {
-			if (this.level().isClientSide) {
+			if (this.level().isClientSide()) {
 				this.level().playLocalSound(this.getX(), this.getY(), this.getZ(), SoundEvents.ARMOR_STAND_HIT, this.getSoundSource(), 0.3F, 1.0F, false);
 				this.lastHit = this.level().getGameTime();
 			}
@@ -183,17 +170,6 @@ public class AbstractDisplayEntity extends LivingEntity {
 
 	public boolean isCorrectBlock(Block target) {
 		return false;
-	}
-
-	public static AttributeSupplier.Builder createAttributes() {
-		AttributeSupplier.Builder builder = Mob.createMobAttributes();
-		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.0);
-		builder = builder.add(Attributes.MAX_HEALTH, 1);
-		builder = builder.add(Attributes.ARMOR, 0);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 0);
-		builder = builder.add(Attributes.FOLLOW_RANGE, 0);
-		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 1);
-		return builder;
 	}
 
 	private void showBreakingParticles() {

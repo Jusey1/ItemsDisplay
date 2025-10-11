@@ -14,7 +14,7 @@ import com.mojang.math.Axis;
 
 public class ItemDisplayRenderer extends LivingEntityRenderer<ItemDisplay, AbstractDisplayState, ItemDisplayModel<AbstractDisplayState>> {
 	public ItemDisplayRenderer(EntityRendererProvider.Context context) {
-		super(context, new ItemDisplayModel(context.bakeLayer(DisplayModels.DISPLAY)), 0.0f);
+		super(context, new ItemDisplayModel(context.bakeLayer(DisplayModels.DISPLAY)), 0.0F);
 		this.addLayer(new DisplayedItemLayer(this));
 	}
 
@@ -30,6 +30,7 @@ public class ItemDisplayRenderer extends LivingEntityRenderer<ItemDisplay, Abstr
 
 	@Override
 	public void extractRenderState(ItemDisplay display, AbstractDisplayState state, float f1) {
+        super.extractRenderState(display, state, f1);
 		this.itemModelResolver.updateForLiving(state.heldItem, display.getOffhandItem(), ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, display);
 		state.yRot = Mth.rotLerp(f1, display.yRotO, display.getYRot());
 		state.lastHit = (float) (display.level().getGameTime() - display.lastHit) + f1;
