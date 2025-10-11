@@ -1,12 +1,12 @@
 {
-	"credit": "Made with Blockbench",
+	"parent": "items_displayed:block/abstract/abstract_gemstone_1",
 	"textures": {
 		"0": "items_displayed:block/gemstone/lapis_lazuli",
 		"particle": "items_displayed:block/gemstone/lapis_lazuli"
 	},
 	"elements": [
 		{
-			"name": "lapis upper 1",
+			"name": "gemstone_1",
 			"from": [6, 0, 7],
 			"to": [10, 2, 11],
 			"faces": {
@@ -19,7 +19,7 @@
 			}
 		},
 		{
-			"name": "lapis lower 1",
+			"name": "gemstone_2",
 			"from": [6, 0, 5],
 			"to": [9, 2, 7],
 			"faces": {

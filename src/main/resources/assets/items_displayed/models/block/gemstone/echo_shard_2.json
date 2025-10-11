@@ -1,12 +1,12 @@
 {
-	"credit": "Made with Blockbench",
+	"parent": "items_displayed:block/abstract/abstract_crystal_2",
 	"textures": {
 		"0": "items_displayed:block/gemstone/echo_shard",
 		"particle": "items_displayed:block/gemstone/echo_shard"
 	},
 	"elements": [
 		{
-			"name": "shard 1",
+			"name": "crystal_1",
 			"from": [8.5, 0, 1.75],
 			"to": [11.5, 3, 9.75],
 			"rotation": {"angle": 22.5, "axis": "y", "origin": [10, 1.5, 5.75]},
@@ -20,7 +20,7 @@
 			}
 		},
 		{
-			"name": "shard 2",
+			"name": "crystal_2",
 			"from": [3, 0, 9.25],
 			"to": [11, 3, 12.25],
 			"rotation": {"angle": -45, "axis": "y", "origin": [7, 1.5, 10.75]},

@@ -1,12 +1,12 @@
 {
-	"credit": "Made with Blockbench",
+	"parent": "items_displayed:block/abstract/abstract_gemstone_3",
 	"textures": {
 		"0": "items_displayed:block/gemstone/lapis_lazuli",
 		"particle": "items_displayed:block/gemstone/lapis_lazuli"
 	},
 	"elements": [
 		{
-			"name": "lapis upper 1",
+			"name": "gemstone_1",
 			"from": [2, 0, 8],
 			"to": [6, 2, 12],
 			"rotation": {"angle": 0, "axis": "y", "origin": [0, 0, 0.25]},
@@ -20,7 +20,7 @@
 			}
 		},
 		{
-			"name": "lapis lower 1",
+			"name": "gemstone_2",
 			"from": [2, 0, 6],
 			"to": [5, 2, 8],
 			"rotation": {"angle": 0, "axis": "y", "origin": [0.75, 0, 0]},
@@ -34,7 +34,7 @@
 			}
 		},
 		{
-			"name": "lapis upper 2",
+			"name": "gemstone_3",
 			"from": [9.75, 0, 1],
 			"to": [13.75, 2, 5],
 			"rotation": {"angle": 45, "axis": "y", "origin": [13.5, 1, 7.5]},
@@ -48,7 +48,7 @@
 			}
 		},
 		{
-			"name": "lapis lower 2",
+			"name": "gemstone_4",
 			"from": [9.75, 0, -1],
 			"to": [12.75, 2, 1],
 			"rotation": {"angle": 45, "axis": "y", "origin": [13.5, 1, 7.5]},
@@ -62,7 +62,7 @@
 			}
 		},
 		{
-			"name": "lapis upper 3",
+			"name": "gemstone_5",
 			"from": [2.75, 0, 12.25],
 			"to": [6.75, 2, 16.25],
 			"rotation": {"angle": 22.5, "axis": "y", "origin": [0, 0, 0.25]},
@@ -76,7 +76,7 @@
 			}
 		},
 		{
-			"name": "lapis lower 3",
+			"name": "gemstone_6",
 			"from": [6.75, 0, 12.25],
 			"to": [8.75, 2, 15.25],
 			"rotation": {"angle": 22.5, "axis": "y", "origin": [0, 0, 0.25]},

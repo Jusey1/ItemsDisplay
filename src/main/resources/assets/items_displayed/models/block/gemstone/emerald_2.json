@@ -1,12 +1,12 @@
 {
-	"credit": "Made with Blockbench",
+	"parent": "items_displayed:block/abstract/abstract_gemstone_2",
 	"textures": {
 		"0": "items_displayed:block/gemstone/emerald",
 		"particle": "items_displayed:block/gemstone/emerald"
 	},
 	"elements": [
 		{
-			"name": "emerald 1",
+			"name": "gemstone_1",
 			"from": [9, 0, 6],
 			"to": [13, 2, 13],
 			"faces": {
@@ -19,7 +19,7 @@
 			}
 		},
 		{
-			"name": "emerald 2",
+			"name": "gemstone_2",
 			"from": [3, 0, 4],
 			"to": [7, 2, 11],
 			"faces": {
