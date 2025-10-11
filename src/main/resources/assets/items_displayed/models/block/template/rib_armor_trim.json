@@ -1,6 +1,5 @@
 {
-	"credit": "Made with Blockbench",
-	"texture_size": [32, 32],
+	"parent": "items_displayed:block/abstract/abstract_template",
 	"textures": {
 		"0": "items_displayed:block/template/rib_armor_trim",
 		"particle": "items_displayed:block/template/rib_armor_trim"
@@ -20,7 +19,7 @@
 			}
 		},
 		{
-			"name": "side1",
+			"name": "side_1",
 			"from": [11, 0, 2],
 			"to": [12, 4, 5],
 			"faces": {
@@ -33,7 +32,7 @@
 			}
 		},
 		{
-			"name": "side2",
+			"name": "side_2",
 			"from": [11, 0, 6],
 			"to": [12, 4, 9],
 			"faces": {
@@ -46,7 +45,7 @@
 			}
 		},
 		{
-			"name": "side3",
+			"name": "side_3",
 			"from": [11, 0, 10],
 			"to": [12, 4, 14],
 			"faces": {
@@ -59,7 +58,7 @@
 			}
 		},
 		{
-			"name": "side4",
+			"name": "side_4",
 			"from": [4, 0, 2],
 			"to": [5, 4, 3],
 			"faces": {
@@ -72,7 +71,7 @@
 			}
 		},
 		{
-			"name": "side5",
+			"name": "side_5",
 			"from": [4, 0, 4],
 			"to": [5, 4, 7],
 			"faces": {
@@ -85,7 +84,7 @@
 			}
 		},
 		{
-			"name": "side6",
+			"name": "side_6",
 			"from": [4, 0, 8],
 			"to": [5, 4, 11],
 			"faces": {
@@ -98,7 +97,7 @@
 			}
 		},
 		{
-			"name": "side7",
+			"name": "side_7",
 			"from": [4, 0, 12],
 			"to": [5, 4, 14],
 			"faces": {
@@ -111,7 +110,7 @@
 			}
 		},
 		{
-			"name": "top1",
+			"name": "top_1",
 			"from": [5, 3, 2],
 			"to": [11, 4, 3],
 			"faces": {
@@ -124,7 +123,7 @@
 			}
 		},
 		{
-			"name": "top2",
+			"name": "top_2",
 			"from": [8, 3, 3],
 			"to": [11, 4, 5],
 			"faces": {
@@ -137,7 +136,7 @@
 			}
 		},
 		{
-			"name": "top3",
+			"name": "top_3",
 			"from": [5, 3, 4],
 			"to": [8, 4, 7],
 			"faces": {
@@ -150,7 +149,7 @@
 			}
 		},
 		{
-			"name": "top4",
+			"name": "top_4",
 			"from": [8, 3, 6],
 			"to": [9, 4, 7],
 			"faces": {
@@ -163,7 +162,7 @@
 			}
 		},
 		{
-			"name": "top5",
+			"name": "top_5",
 			"from": [9, 3, 6],
 			"to": [11, 4, 9],
 			"faces": {
@@ -176,7 +175,7 @@
 			}
 		},
 		{
-			"name": "top6",
+			"name": "top_6",
 			"from": [7, 3, 8],
 			"to": [9, 4, 9],
 			"faces": {
@@ -189,7 +188,7 @@
 			}
 		},
 		{
-			"name": "top7",
+			"name": "top_7",
 			"from": [5, 3, 8],
 			"to": [7, 4, 11],
 			"faces": {
@@ -202,7 +201,7 @@
 			}
 		},
 		{
-			"name": "top8",
+			"name": "top_8",
 			"from": [7, 3, 10],
 			"to": [8, 4, 11],
 			"faces": {
@@ -215,7 +214,7 @@
 			}
 		},
 		{
-			"name": "top9",
+			"name": "top_9",
 			"from": [8, 3, 10],
 			"to": [11, 4, 14],
 			"faces": {
@@ -228,7 +227,7 @@
 			}
 		},
 		{
-			"name": "top10",
+			"name": "top_10",
 			"from": [5, 3, 12],
 			"to": [8, 4, 14],
 			"faces": {
