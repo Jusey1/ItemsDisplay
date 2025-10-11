@@ -4,7 +4,7 @@ license="MIT License"
 
 [[mods]]
 modId="items_displayed"
-version="2.2.7"
+version="2.2.8"
 displayName="Items Displayed"
 displayURL="https://legacy.curseforge.com/minecraft/mc-mods/items-displayed"
 logoFile="logo.png"
@@ -18,7 +18,7 @@ config="display.mixins.json"
 [[dependencies.items_displayed]]
     modId="minecraft"
     type="required"
-    versionRange="[1.21.8]"
+    versionRange="[1.21.10]"
     ordering="AFTER"
     side="BOTH"
 
@@ -65,6 +65,12 @@ config="display.mixins.json"
     ordering="AFTER"
     side="BOTH"
 [[dependencies.items_displayed]]
+    modId="revotedwildfire"
+    type="optional"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+[[dependencies.items_displayed]]
     modId="spawn"
     type="optional"
     versionRange="[0,)"
@@ -72,6 +78,12 @@ config="display.mixins.json"
     side="BOTH"
 [[dependencies.items_displayed]]
     modId="supplementaries"
+    type="optional"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+[[dependencies.items_displayed]]
+    modId="upgrade_aquatic"
     type="optional"
     versionRange="[0,)"
     ordering="AFTER"
