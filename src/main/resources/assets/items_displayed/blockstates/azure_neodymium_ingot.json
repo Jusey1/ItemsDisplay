@@ -44,6 +44,21 @@
     "stacks=3,facing=east": {
       "model": "items_displayed:block/ingot/azure_ingot_3",
       "y": 90
+    },
+    "stacks=4,facing=north": {
+      "model": "items_displayed:block/ingot/azure_ingot_4"
+    },
+    "stacks=4,facing=south": {
+      "model": "items_displayed:block/ingot/azure_ingot_4",
+      "y": 180
+    },
+    "stacks=4,facing=west": {
+      "model": "items_displayed:block/ingot/azure_ingot_4",
+      "y": 270
+    },
+    "stacks=4,facing=east": {
+      "model": "items_displayed:block/ingot/azure_ingot_4",
+      "y": 90
     }
   }
 }
