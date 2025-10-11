@@ -43,7 +43,6 @@ public class DisplayTabs {
 				tabData.accept(Items.NETHERITE_INGOT);
 				tabData.accept(Items.BRICK);
 				tabData.accept(Items.NETHER_BRICK);
-				tabData.accept(Items.DISC_FRAGMENT_5);
 				tabData.accept(Items.MUSIC_DISC_5);
 				tabData.accept(Items.MUSIC_DISC_11);
 				tabData.accept(Items.MUSIC_DISC_13);

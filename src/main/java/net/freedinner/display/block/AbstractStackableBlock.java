@@ -13,7 +13,7 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.redstone.Orientation;
 
 public abstract class AbstractStackableBlock extends AbstractItemBlock {
-	public static final IntegerProperty STACKS = IntegerProperty.create("stacks", 1, 10);
+	public static final IntegerProperty STACKS = IntegerProperty.create("stacks", 1, 4);
 
 	public AbstractStackableBlock(BlockBehaviour.Properties props) {
 		super(props);

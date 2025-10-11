@@ -69,7 +69,6 @@ public class DisplayBlocks {
 		REGISTRY.register("gold_ingot", () -> new IngotBlock(createBlock("gold_ingot", SoundType.METAL)));
 		REGISTRY.register("netherite_ingot", () -> new IngotBlock(createBlock("netherite_ingot", SoundType.NETHERITE_BLOCK)));
 		//
-		REGISTRY.register("disc_fragment_5", () -> new FragmentsBlock(createBlock("disc_fragment_5", SoundType.STONE)));
 		REGISTRY.register("coal", () -> new GemBlock(createBlock("coal", SoundType.STONE)));
 		REGISTRY.register("charcoal", () -> new GemBlock(createBlock("charcoal", SoundType.STONE)));
 		REGISTRY.register("amethyst_shard", () -> new GemBlock(createBlock("amethyst_shard", SoundType.AMETHYST)));
@@ -112,8 +111,6 @@ public class DisplayBlocks {
 			REGISTRY.register("polarity_armor_trim", () -> new ArmorTrimBlock(createBlock("polarity_armor_trim", SoundType.STONE)));
 			REGISTRY.register("azure_neodymium_ingot", () -> new IngotBlock(createBlock("azure_neodymium_ingot", SoundType.METAL)));
 			REGISTRY.register("scarlet_neodymium_ingot", () -> new IngotBlock(createBlock("scarlet_neodymium_ingot", SoundType.METAL)));
-			REGISTRY.register("disc_fragment_fusion", () -> new FragmentsBlock(createBlock("disc_fragment_fusion", SoundType.STONE)));
-			REGISTRY.register("disc_fragment_tasty", () -> new FragmentsBlock(createBlock("disc_fragment_tasty", SoundType.STONE)));
 			REGISTRY.register("music_disc_fusion", () -> new MusicBlock(createBlock("music_disc_fusion", SoundType.STONE)));
 			REGISTRY.register("music_disc_tasty", () -> new MusicBlock(createBlock("music_disc_tasty", SoundType.STONE)));
 		}
@@ -132,8 +129,6 @@ public class DisplayBlocks {
 		}
 		if (ModList.get().isLoaded("galosphere")) {
 			REGISTRY.register("preserved_template", () -> new UpgradeBlock(createBlock("preserved_template", SoundType.STONE)));
-			REGISTRY.register("silver_upgrade", () -> new UpgradeBlock(createBlock("silver_upgrade", SoundType.WOOD)));
-			REGISTRY.register("silver_ingot", () -> new IngotBlock(createBlock("silver_ingot", SoundType.METAL)));
 			REGISTRY.register("allurite_shard", () -> new GemBlock(createBlock("allurite_shard", SoundType.AMETHYST)));
 			REGISTRY.register("lumiere_shard", () -> new GemBlock(createBlock("lumiere_shard", SoundType.AMETHYST)));
 		}
@@ -154,7 +149,6 @@ public class DisplayBlocks {
 			REGISTRY.register("music_disc_heave_ho", () -> new MusicBlock(createBlock("music_disc_heave_ho", SoundType.STONE)));
 		}
 		if (ModList.get().isLoaded("upgrade_aquatic")) {
-			REGISTRY.register("disc_fragment_atlantis", () -> new FragmentsBlock(createBlock("disc_fragment_atlantis", SoundType.STONE)));
 			REGISTRY.register("music_disc_atlantis", () -> new MusicBlock(createBlock("music_disc_atlantis", SoundType.STONE)));
 		}
 	}
