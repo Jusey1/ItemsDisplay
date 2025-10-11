@@ -15,7 +15,6 @@
     "minecraft:emerald",
     "minecraft:lapis_lazuli",
     "minecraft:echo_shard",
-    "minecraft:disc_fragment_5",
     "minecraft:music_disc_11",
     "minecraft:music_disc_13",
     "minecraft:music_disc_cat",
@@ -116,14 +115,6 @@
       "required": false
     },
     {
-      "id": "alexscaves:disc_fragment_fusion",
-      "required": false
-    },
-    {
-      "id": "alexscaves:disc_fragment_tasty",
-      "required": false
-    },
-    {
       "id": "cloudstorage:music_disc_drift",
       "required": false
     },
@@ -141,14 +132,6 @@
     },
     {
       "id": "friendsandfoes:music_disc_around_the_corner",
-      "required": false
-    },
-    {
-      "id": "galosphere:silver_ingot",
-      "required": false
-    },
-    {
-      "id": "galosphere:silver_upgrade_smithing_template",
       "required": false
     },
     {
@@ -193,10 +176,6 @@
     },
     {
       "id": "supplementaries:music_disc_heave_ho",
-      "required": false
-    },
-    {
-      "id": "upgrade_aquatic:disc_fragment_atlantis",
       "required": false
     },
     {
