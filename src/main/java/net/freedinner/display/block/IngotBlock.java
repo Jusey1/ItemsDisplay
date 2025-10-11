@@ -34,7 +34,7 @@ public class IngotBlock extends AbstractStackableBlock {
 				case EAST, WEST -> box(2, 0, 1, 14, 3, 15);
 				default -> box(1, 0, 1, 15, 3, 15);
 			};
-			case 3 -> switch (state.getValue(FACING)) {
+			case 3, 4 -> switch (state.getValue(FACING)) {
 				case NORTH, SOUTH -> box(2, 0, 3, 14, 6, 13);
 				case EAST, WEST -> box(3, 0, 2, 13, 6, 14);
 				default -> box(1, 0, 1, 15, 6, 15);
