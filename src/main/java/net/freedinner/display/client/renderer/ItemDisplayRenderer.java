@@ -30,7 +30,7 @@ public class ItemDisplayRenderer extends LivingEntityRenderer<ItemDisplay, Abstr
 
 	@Override
 	public void extractRenderState(ItemDisplay display, AbstractDisplayState state, float f1) {
-        super.extractRenderState(display, state, f1);
+		super.extractRenderState(display, state, f1);
 		this.itemModelResolver.updateForLiving(state.heldItem, display.getOffhandItem(), ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, display);
 		state.yRot = Mth.rotLerp(f1, display.yRotO, display.getYRot());
 		state.lastHit = (float) (display.level().getGameTime() - display.lastHit) + f1;

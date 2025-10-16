@@ -124,6 +124,10 @@ public class DisplayBlocks {
 		if (ModList.get().isLoaded("ecologics")) {
 			REGISTRY.register("music_disc_coconut", () -> new MusicBlock(createBlock("music_disc_coconut", SoundType.STONE)));
 		}
+        if (ModList.get().isLoaded("environmental")) {
+            REGISTRY.register("music_disc_leaving_home", () -> new MusicBlock(createBlock("music_disc_leaving_home", SoundType.STONE)));
+            REGISTRY.register("music_disc_slabwave", () -> new MusicBlock(createBlock("music_disc_slabwave", SoundType.STONE)));
+        }
 		if (ModList.get().isLoaded("friendsandfoes")) {
 			REGISTRY.register("music_disc_around_the_corner", () -> new MusicBlock(createBlock("music_disc_around_the_corner", SoundType.STONE)));
 		}
