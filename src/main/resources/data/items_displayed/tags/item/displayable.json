@@ -131,6 +131,14 @@
       "required": false
     },
     {
+      "id": "environmental:music_disc_leaving_home",
+      "required": false
+    },
+    {
+      "id": "environmental:music_disc_slabwave",
+      "required": false
+    },
+    {
       "id": "friendsandfoes:music_disc_around_the_corner",
       "required": false
     },
