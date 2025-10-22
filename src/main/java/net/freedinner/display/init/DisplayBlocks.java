@@ -135,6 +135,9 @@ public class DisplayBlocks {
 			REGISTRY.register("preserved_template", () -> new UpgradeBlock(createBlock("preserved_template", SoundType.STONE)));
 			REGISTRY.register("allurite_shard", () -> new GemBlock(createBlock("allurite_shard", SoundType.AMETHYST)));
 			REGISTRY.register("lumiere_shard", () -> new GemBlock(createBlock("lumiere_shard", SoundType.AMETHYST)));
+            REGISTRY.register("palladium_ingot", () -> new IngotBlock(createBlock("palladium_ingot", SoundType.METAL)));
+            REGISTRY.register("thirst_pottery_sherd", () -> new SherdBlock(createBlock("thirst_pottery_sherd", SoundType.DECORATED_POT)));
+            REGISTRY.register("wave_pottery_sherd", () -> new SherdBlock(createBlock("wave_pottery_sherd", SoundType.DECORATED_POT)));
 		}
 		if (ModList.get().isLoaded("kobolds")) {
 			REGISTRY.register("kobold_template", () -> new ArmorTrimBlock(createBlock("kobold_template", SoundType.TUFF)));
