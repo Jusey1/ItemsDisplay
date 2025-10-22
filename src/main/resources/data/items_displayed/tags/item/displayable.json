@@ -155,6 +155,18 @@
       "required": false
     },
     {
+      "id": "galosphere:palladium_ingot",
+      "required": false
+    },
+    {
+      "id": "galosphere:thirst_pottery_sherd",
+      "required": false
+    },
+    {
+      "id": "galosphere:wave_pottery_sherd",
+      "required": false
+    },
+    {
       "id": "kobolds:kobold_template",
       "required": false
     },
