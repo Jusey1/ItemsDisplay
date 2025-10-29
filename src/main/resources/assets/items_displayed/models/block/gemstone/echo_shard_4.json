@@ -1,5 +1,5 @@
 {
-	"parent": "items_displayed:block/abstract/abstract_crystal_",
+	"parent": "items_displayed:block/abstract/abstract_crystal_4",
 	"textures": {
 		"0": "items_displayed:block/gemstone/echo_shard",
 		"particle": "items_displayed:block/gemstone/echo_shard"
