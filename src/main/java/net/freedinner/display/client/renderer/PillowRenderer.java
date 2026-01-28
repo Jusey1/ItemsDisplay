@@ -4,10 +4,9 @@ import net.freedinner.display.Display;
 import net.freedinner.display.init.DisplayModels;
 import net.freedinner.display.client.model.PillowModel;
 import net.freedinner.display.entity.ItemPillow;
-import net.minecraft.client.renderer.entity.ArmorStandRenderer;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemDisplayContext;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -20,8 +19,8 @@ public class PillowRenderer extends LivingEntityRenderer<ItemPillow, AbstractDis
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(AbstractDisplayState target) {
-		return ResourceLocation.fromNamespaceAndPath(Display.MODID,"textures/entity/jewelry_pillow/" + target.getType + "_jewelry_pillow.png");
+	public Identifier getTextureLocation(AbstractDisplayState target) {
+		return Identifier.fromNamespaceAndPath(Display.MODID,"textures/entity/jewelry_pillow/" + target.getType + "_jewelry_pillow.png");
 	}
 
 	@Override

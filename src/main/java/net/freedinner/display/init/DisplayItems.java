@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 public class DisplayItems {
 	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(Registries.ITEM, Display.MODID);
@@ -38,6 +38,6 @@ public class DisplayItems {
 	}
 
 	public static Item.Properties createBaseProps(String name) {
-		return new Item.Properties().setId(ResourceKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath(Display.MODID, name)));
+		return new Item.Properties().setId(ResourceKey.create(Registries.ITEM, Identifier.fromNamespaceAndPath(Display.MODID, name)));
 	}
 }

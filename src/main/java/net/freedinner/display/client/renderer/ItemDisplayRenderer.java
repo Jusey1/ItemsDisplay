@@ -6,7 +6,7 @@ import net.freedinner.display.entity.ItemDisplay;
 import net.freedinner.display.client.model.ItemDisplayModel;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.ItemDisplayContext;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -19,8 +19,8 @@ public class ItemDisplayRenderer extends LivingEntityRenderer<ItemDisplay, Abstr
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(AbstractDisplayState target) {
-		return ResourceLocation.fromNamespaceAndPath(Display.MODID, "textures/entity/item_display.png");
+	public Identifier getTextureLocation(AbstractDisplayState target) {
+		return Identifier.fromNamespaceAndPath(Display.MODID, "textures/entity/item_display.png");
 	}
 
 	@Override

@@ -13,8 +13,7 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
-
+import net.minecraft.resources.Identifier;
 
 @EventBusSubscriber
 public class DisplayMobs {
@@ -38,7 +37,7 @@ public class DisplayMobs {
 	public static final DeferredHolder<EntityType<?>, EntityType<ItemPillow>> BROWN_PILLOW = register("brown_jewelry_pillow", EntityType.Builder.of(ItemPillow::new, MobCategory.MISC).sized(0.56F, 0.45F).clientTrackingRange(10));
 
 	private static <T extends Entity> DeferredHolder<EntityType<?>, EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
-		return REGISTRY.register(registryname, () -> entityTypeBuilder.build(ResourceKey.create(Registries.ENTITY_TYPE, ResourceLocation.fromNamespaceAndPath(Display.MODID, registryname))));
+		return REGISTRY.register(registryname, () -> entityTypeBuilder.build(ResourceKey.create(Registries.ENTITY_TYPE, Identifier.fromNamespaceAndPath(Display.MODID, registryname))));
 	}
 
 	@SubscribeEvent

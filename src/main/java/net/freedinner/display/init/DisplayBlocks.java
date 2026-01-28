@@ -5,7 +5,7 @@ import net.freedinner.display.block.*;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.level.material.MapColor;
@@ -165,6 +165,6 @@ public class DisplayBlocks {
 	}
 
 	private static BlockBehaviour.Properties createBaseProps(String name) {
-		return BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(Display.MODID, name))).noTerrainParticles().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY);
+		return BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(Display.MODID, name))).noTerrainParticles().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY);
 	}
 }
